@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mazer Nuxt 🚀
+# NuxtAirBnB 🚀
 
 </div>
 
