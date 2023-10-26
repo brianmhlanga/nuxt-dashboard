@@ -60,7 +60,7 @@
     "nuxt": "^3.6.2",
     "nuxt-primevue": "^0.0.3",
     "perfect-scrollbar": "^1.5.5",
-    "pinia": "^2.1.4",
+    "pinia": "^2.1.7",
     "prisma-erd-generator": "^1.2.4",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
