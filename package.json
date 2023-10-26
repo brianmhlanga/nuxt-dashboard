@@ -12,7 +12,7 @@
   "dependencies": {
     "@nuxtjs/color-mode": "^3.3.0",
     "@paralleldrive/cuid2": "^2.2.2",
-    "@pinia/nuxt": "^0.4.0",
+    "@pinia/nuxt": "^0.5.1",
     "@popperjs/core": "^2.11.8",
     "@prisma/client": "^4.2.1",
     "@sendgrid/mail": "^7.7.0",
@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.0.1",
-    "@pinia/nuxt": "^0.4.11",
+    "@pinia/nuxt": "^0.5.1",
     "@types/bcrypt": "^5.0.0",
     "@types/bootstrap": "^5.2.6",
     "@types/jquery": "^3.5.14",
