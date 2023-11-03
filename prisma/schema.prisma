@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator erd {
+  provider = "prisma-erd-generator"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id                String         @id @default(cuid())
+  email              String         @unique
+  username           String         @unique
+  name               String?
+  title              String?      
+  surname            String?
+  phone              String?        @unique
+  age                Int?
+  gender             Gender?     @default(MALE)
+  password           String
+  owned_properties   Property[]
+  salt               String
+  profile_type       ProfileType @default(CLIENT)
+  account_status      status @default(INACTIVE)
+  created_at          DateTime       @default(now())
+  updated_at          DateTime @updatedAt
+
+  @@map("user")
+
+}
+
+model Property {
+  id String @id @default(cuid())
+  name String
+  owner_id String
+  owner User @relation(fields: [owner_id],references: [id])
+  description String?
+  rooms Int?
+  image_url String?
+  price String?
+  property_status PropertyStatus @default(UNAVAILABLE)
+  created_at          DateTime       @default(now())
+  updated_at          DateTime @updatedAt
+  
+}
+ enum status {
+  ACTIVE
+  INACTIVE
+ }
+enum PropertyStatus {
+  AVAILABLE
+  BOOKED
+  UNAVAILABLE
+}
+
+enum ProfileType {
+  ADMIN
+  CLIENT
+}
+
+
+enum Gender {
+  MALE
+  FEMALE
+}
+

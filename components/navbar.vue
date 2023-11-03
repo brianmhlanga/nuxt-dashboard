@@ -7,64 +7,35 @@
     </a>
     <div class="flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full surface-overlay left-0 top-100 z-1 shadow-2 lg:shadow-none">
         <ul class="list-none p-0 m-0 flex select-none flex-column lg:flex-row">
-        <li>
+        <li @click="navigateTo('/')">
             <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
             <i class="pi pi-home mr-2"></i>
             <span>Home</span>
             <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
             </a>
         </li>
-        <li>
-            <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
-            <i class="pi pi-users mr-2"></i>
-            <span>Customers</span>
-            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-            </a>
-        </li>
-        <li>
-            <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
-            <i class="pi pi-calendar mr-2"></i>
-            <span>Calendar</span>
-            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-            </a>
-        </li>
-        <li>
-            <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
-            <i class="pi pi-chart-line mr-2"></i>
-            <span>Stats</span>
-            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-            </a>
-        </li>
-        </ul>
-        <ul class="list-none p-0 m-0 flex select-none flex-column lg:flex-row border-top-1 surface-border lg:border-top-none">
-        <li>
-            <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
-            <i class="pi pi-inbox text-base lg:text-2xl mr-2 lg:mr-0"></i>
-            <span class="block lg:hidden font-medium">Inbox</span>
-            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-            </a>
-        </li>
-        <li>
-            <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
-            <i class="pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0"></i>
-            <span class="block lg:hidden font-medium">Notifications</span>
-            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-            </a>
-        </li>
-        <li class="border-top-1 surface-border lg:border-top-none">
-            <a class="flex px-6 p-3 h-full lg:px-3 lg:py-2 align-items-center text-600 border-left-2 lg:border-bottom-2 lg:border-left-none border-transparent hover:border-blue-500 font-medium cursor-pointer transition-colors transition-duration-150 p-ripple" data-pd-ripple="true">
-            <img src="images/blocks/avatars/circle/avatar-f-1.png" class="mr-3 lg:mr-0" style="width: 28px; height: 28px;">
-            <div class="block lg:hidden">
-                <div class="text-900 font-medium">Josephine Lillard</div>
-                <span class="text-600 font-medium text-sm">Marketing Specialist</span>
-            </div>
-            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
-            </a>
-        </li>
+       
         </ul>
     </div>
     </div>
 </template>
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth';
+import { useToast } from 'primevue/usetoast';
+import { storeToRefs } from "pinia";
+
+const authStore = useAuthStore();
+const logout = async () => {
+  const result = await authStore.logout();
+  
+  if(result.success){
+    window.location.href = "/login";
+    if(!process.server){
+      localStorage.userData = "{}";
+    }
+  }
+}
+</script>
 <style>
 .l10sdlqs.dir.dir-ltr {
     padding-top: 23px;

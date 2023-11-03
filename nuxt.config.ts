@@ -1,3 +1,8 @@
+import * as dotenv from 'dotenv'
+
+
+dotenv.config();
+
 export default defineNuxtConfig({
   css: [
     "primevue/resources/themes/lara-light-blue/theme.css",
@@ -44,4 +49,9 @@ export default defineNuxtConfig({
       'Nunito': true,
     },
   },
+  runtimeConfig: {
+    DATABASE_URL: process.env.DATABASE_URL,
+    JWT_TOKEN_SECRET: process.env.JWT_TOKEN_SECRET,
+    EMAIL_HOST: process.env.EMAIL_HOST
+  }
 })
