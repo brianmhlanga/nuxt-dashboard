@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mazer Nuxt 🚀
+# NuxtAirBnB 🚀
 
 </div>
 
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/fzn0x/mazer-nuxt">Mazer</a> <b>Nuxt</b> is an Admin Dashboard Template that can help you develop faster. Made with Bootstrap 5. No jQuery dependency with Nuxt 3 + TypeScript.
+  <a href="https://github.com/fzn0x/mazer-nuxt">NuxtBnB</a> <b>Nuxt</b> is a minimalistic airBnB concept nuxt app that can help you develop faster. Made with Bootstrap 5. No jQuery dependency with Nuxt 3 + TypeScript.
 </p>
 
 ## Table of contents
@@ -25,15 +25,14 @@
 
 ## Installation Guide
 
-You may need to use Node.js v18.16.0 or above to continue with Mazer Nuxt installation guide.
+You may need to use Node.js v18.16.0 or above.
 ## Build Setup
 
 ```bash
 # clone the repository
-$ git clone https://github.com/fzn0x/mazer-nuxt.git
 
 # navigate to the folder
-$ cd mazer-nuxt
+$ cd project-name
 ```
 
 After clone the repository and navigate to the folder, you can use few commands below
@@ -66,4 +65,4 @@ See Contributing Guide [here](./CONTRIBUTING.md)
 
 ## License
 
-Mazer Nuxt is under MIT License.
+NuxtAirBnB is under MIT License.
