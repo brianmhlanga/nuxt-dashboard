@@ -2,11 +2,17 @@ import { prisma } from "~~/prisma/db";
 
 export default defineEventHandler(async (event)=>{
     const response: any = {};
-    let {owner_id} = await readBody(event)
+    let {data:{id}} = await readBody(event)
+     console.log("owner id",id)
+    if (!id) {
+      response['properties'] =  null
+      response['success'] = true
+      return response
+    }
     try {
         const properties = await prisma.property.findMany({
             where: {
-              owner_id : owner_id
+              owner_id : id
             }
         });
   

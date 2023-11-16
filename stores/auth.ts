@@ -96,6 +96,7 @@ export const useAuthStore = defineStore('auth', {
       return result;
   },
   async  myProperties(info: any){
+    console.log(info)
     var data = JSON.stringify({
         "data": info,
     });

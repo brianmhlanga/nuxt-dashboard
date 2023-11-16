@@ -11,9 +11,15 @@
             <!---->
             <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
         </button>
-        <button @click="navigateTo('/')" v-else class="p-button p-component mr-3 p-button-raised" type="button" aria-label="Learn More" data-pc-name="button" data-pc-section="root" data-pd-ripple="true">
+        <button @click="navigateTo('/login')" v-else class="p-button p-component mr-3 p-button-raised" type="button" aria-label="Learn More" data-pc-name="button" data-pc-section="root" data-pd-ripple="true">
             <!---->
             <span class="p-button-label" data-pc-section="label">Log In</span>
+            <!---->
+            <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
+        </button>
+        <button @click="navigateTo('/admin')" v-if="session === 'ADMIN'" class="p-button p-component mr-3 p-button-raised" type="button" aria-label="Learn More" data-pc-name="button" data-pc-section="root" data-pd-ripple="true">
+            <!---->
+            <span class="p-button-label" data-pc-section="label">Admin Dashboard</span>
             <!---->
             <span role="presentation" aria-hidden="true" data-p-ink="true" data-p-ink-active="false" class="p-ink" data-pc-name="ripple" data-pc-section="root"></span>
         </button>

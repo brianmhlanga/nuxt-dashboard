@@ -8,8 +8,6 @@
       <p class="mt-0 mb-0 font-normal text-base text-500">These are all the properties available on our catalogue.</p>
     </div>
   </header>
-  <img src="https://blocks.primevue.org/images/blocks/maps/map-1.png" alt="Map" class="w-full border-1 surface-border border-round">
-
   <div class="p-dataview p-component p-dataview-list" data-pc-name="dataview" data-pc-section="root">
     <!---->
     <!---->

@@ -5,8 +5,8 @@
         <div class="text-center mb-5">
             <img src="https://blocks.primevue.org/images/blocks/logos/hyper.svg" alt="Image" height="50" class="mb-3">
             <div class="text-900 text-3xl font-medium mb-3">Welcome to Listings</div>
-            <span class="text-600 font-medium line-height-3">Don't have an account?</span>
-            <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
+            <span class="text-600 font-medium line-height-3">Already have an account?</span>
+            <a href="/login" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Log In!</a>
         </div>
         <div>
             <InlineMessage v-if="isValid === false && password" severity="warn">Password is weak. Include at least one uppercase, one lowercase, one numeric and minimum 8 Characters</InlineMessage>
