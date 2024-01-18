@@ -59,7 +59,7 @@
     "@types/jquery": "^3.5.14",
     "cypress": "^10.6.0",
     "jsdom": "^20.0.0",
-    "nuxt": "^3.6.2",
+    "nuxt": "^3.9.3",
     "nuxt-primevue": "^0.0.3",
     "perfect-scrollbar": "^1.5.5",
     "pinia": "^2.1.4",
